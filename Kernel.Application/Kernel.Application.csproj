@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="FluentResults" Version="3.15.1" />
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.9" />
+    <PackageReference Include="SmartFormat.NET" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\Events\" />
+    <Folder Include="Entities\EventHandlers\" />
+    <Folder Include="Entities\QueryHandlers\" />
+    <Folder Include="Entities\Queries\" />
+    <Folder Include="WorkFlows\EventHandlers\" />
+    <Folder Include="WorkFlows\Events\" />
+    <Folder Include="WorkFlows\Queries\" />
+    <Folder Include="WorkFlows\QueryHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dnettec.Logging\Dnettec.Logging.csproj" />
+    <ProjectReference Include="..\Dnettec\Dnettec.csproj" />
+    <ProjectReference Include="..\Kernel.Domain\Kernel.Domain.csproj" />
+    <ProjectReference Include="..\Kernel.Persistence\Kernel.Persistence.csproj" />
+    <ProjectReference Include="..\Kernel.ViewModel\Kernel.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>

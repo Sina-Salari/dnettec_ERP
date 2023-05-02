@@ -1,0 +1,12 @@
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\bin\Debug\net6.0\Kernel.ViewModel.deps.json
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\bin\Debug\net6.0\Kernel.ViewModel.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\bin\Debug\net6.0\ref\Kernel.ViewModel.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\bin\Debug\net6.0\Kernel.ViewModel.pdb
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\obj\Debug\net6.0\Kernel.ViewModel.csproj.AssemblyReference.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\obj\Debug\net6.0\Kernel.ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\obj\Debug\net6.0\Kernel.ViewModel.AssemblyInfoInputs.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\obj\Debug\net6.0\Kernel.ViewModel.AssemblyInfo.cs
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\obj\Debug\net6.0\Kernel.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\obj\Debug\net6.0\Kernel.ViewModel.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\obj\Debug\net6.0\ref\Kernel.ViewModel.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.ViewModel\obj\Debug\net6.0\Kernel.ViewModel.pdb

@@ -1,0 +1,17 @@
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\bin\Debug\net6.0\Kernel.Resources.deps.json
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\bin\Debug\net6.0\Kernel.Resources.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\bin\Debug\net6.0\ref\Kernel.Resources.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\bin\Debug\net6.0\Kernel.Resources.pdb
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.csproj.AssemblyReference.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.DataDictionary.resources
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.Messages.Errors.resources
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.Messages.Successes.resources
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.Messages.Validations.resources
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.csproj.GenerateResource.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.AssemblyInfoInputs.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.AssemblyInfo.cs
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.csproj.CoreCompileInputs.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\ref\Kernel.Resources.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Kernel.Resources\obj\Debug\net6.0\Kernel.Resources.pdb

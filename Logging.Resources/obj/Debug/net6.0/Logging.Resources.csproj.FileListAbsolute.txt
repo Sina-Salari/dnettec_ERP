@@ -1,0 +1,15 @@
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\bin\Debug\net6.0\Logging.Resources.deps.json
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\bin\Debug\net6.0\Logging.Resources.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\bin\Debug\net6.0\ref\Logging.Resources.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\bin\Debug\net6.0\Logging.Resources.pdb
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\Logging.Resources.csproj.AssemblyReference.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\Logging.Resources.DataDictionary.resources
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\Logging.Resources.Messages.resources
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\Logging.Resources.csproj.GenerateResource.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\Logging.Resources.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\Logging.Resources.AssemblyInfoInputs.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\Logging.Resources.AssemblyInfo.cs
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\Logging.Resources.csproj.CoreCompileInputs.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\Logging.Resources.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\ref\Logging.Resources.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Resources\obj\Debug\net6.0\Logging.Resources.pdb

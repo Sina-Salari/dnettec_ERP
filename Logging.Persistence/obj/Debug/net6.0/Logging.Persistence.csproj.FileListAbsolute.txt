@@ -1,0 +1,17 @@
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\obj\Debug\net6.0\Logging.Persistence.csproj.AssemblyReference.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\obj\Debug\net6.0\Logging.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\obj\Debug\net6.0\Logging.Persistence.AssemblyInfoInputs.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\obj\Debug\net6.0\Logging.Persistence.AssemblyInfo.cs
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\obj\Debug\net6.0\Logging.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\bin\Debug\net6.0\Logging.Persistence.deps.json
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\bin\Debug\net6.0\Logging.Persistence.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\bin\Debug\net6.0\ref\Logging.Persistence.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\bin\Debug\net6.0\Logging.Persistence.pdb
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\bin\Debug\net6.0\Dnettec.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\bin\Debug\net6.0\Logging.Domain.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\bin\Debug\net6.0\Logging.Domain.pdb
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\bin\Debug\net6.0\Dnettec.pdb
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\obj\Debug\net6.0\Logging.Persistence.csproj.CopyComplete
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\obj\Debug\net6.0\Logging.Persistence.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\obj\Debug\net6.0\ref\Logging.Persistence.dll
+C:\Users\sinac\source\repos\dnettec_ERP\Logging.Persistence\obj\Debug\net6.0\Logging.Persistence.pdb

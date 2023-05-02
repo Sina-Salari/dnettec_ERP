@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0q35Ct6Hb9A4FMRVnzWCJZlfKm7p5m73kXtjnZSHuu4=",
+  "Source": "Kernel.Api",
+  "BasePath": "_content/Kernel.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
