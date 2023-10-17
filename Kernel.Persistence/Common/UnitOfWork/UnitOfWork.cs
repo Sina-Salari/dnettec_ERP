@@ -246,5 +246,41 @@ namespace Kernel.Persistence.Common.UnitOfWork
             }
         }
         // **************************************************
+
+        // **************************************************
+        private Accounts.Repositories.IAccountRepository _accounts;
+
+        public Accounts.Repositories.IAccountRepository Accounts
+        {
+            get
+            {
+                if (_accounts == null)
+                {
+                    _accounts =
+                        new Accounts.Repositories.AccountRepositrory(DatabaseContext);
+                }
+
+                return _accounts;
+            }
+        }
+        // **************************************************
+
+        // **************************************************
+        private Applications.Repositories.IApplicationRepository _applications;
+
+        public Applications.Repositories.IApplicationRepository Applications
+        {
+            get
+            {
+                if (_applications == null)
+                {
+                    _applications =
+                        new Applications.Repositories.ApplicationRepository(DatabaseContext);
+                }
+
+                return _applications;
+            }
+        }
+        // **************************************************
     }
 }

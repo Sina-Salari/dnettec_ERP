@@ -3546,11 +3546,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Persistence\\Kernel.Persistence.csproj",
+      "projectUniqueName": "G:\\Private\\dnettec_ERP\\Kernel.Persistence\\Kernel.Persistence.csproj",
       "projectName": "Kernel.Persistence",
-      "projectPath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Persistence\\Kernel.Persistence.csproj",
+      "projectPath": "G:\\Private\\dnettec_ERP\\Kernel.Persistence\\Kernel.Persistence.csproj",
       "packagesPath": "C:\\Users\\sinac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Persistence\\obj\\",
+      "outputPath": "G:\\Private\\dnettec_ERP\\Kernel.Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -3573,11 +3573,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Dnettec\\Dnettec.csproj": {
-              "projectPath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Dnettec\\Dnettec.csproj"
+            "G:\\Private\\dnettec_ERP\\Dnettec\\Dnettec.csproj": {
+              "projectPath": "G:\\Private\\dnettec_ERP\\Dnettec\\Dnettec.csproj"
             },
-            "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Domain\\Kernel.Domain.csproj": {
-              "projectPath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Domain\\Kernel.Domain.csproj"
+            "G:\\Private\\dnettec_ERP\\Kernel.Domain\\Kernel.Domain.csproj": {
+              "projectPath": "G:\\Private\\dnettec_ERP\\Kernel.Domain\\Kernel.Domain.csproj"
             }
           }
         }

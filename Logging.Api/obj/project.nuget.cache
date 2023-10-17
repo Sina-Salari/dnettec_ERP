@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jzNvrnU1TvJee6x6ZJ2j3UtoFMP45TcKNwqRXwhf0gb3T1XROGkd3y7nV+9+52rqzbnGksf7hC2fslVyQgscJA==",
+  "dgSpecHash": "1IZTa9ogUNjCLw9xWkCog6x3sUlmsu/N9D+8gOwbB+bXkC3dA/TaN0glBhQI4etw5g5fbha6Flosx2FFc/1gOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Logging.Api\\Logging.Api.csproj",
+  "projectFilePath": "G:\\Private\\dnettec_ERP\\Logging.Api\\Logging.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sinac\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\sinac\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",

@@ -115,7 +115,7 @@ namespace Kernel.Resources.Messages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to طول فیلد {0} می‌تواند حداکثر {1} کاراکتر باشد!.
+        ///   Looks up a localized string similar to طول {0} می‌تواند حداکثر {1} کاراکتر باشد!.
         /// </summary>
         public static string MaxLength {
             get {
@@ -124,7 +124,7 @@ namespace Kernel.Resources.Messages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to طول فیلد {0} باید حداقل {1} کاراکتر باشد!.
+        ///   Looks up a localized string similar to طول {0} باید حداقل {1} کاراکتر باشد!.
         /// </summary>
         public static string MinLength {
             get {
@@ -138,6 +138,15 @@ namespace Kernel.Resources.Messages {
         public static string NotFound {
             get {
                 return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to پسورد باید شامل {0} باشد.
+        /// </summary>
+        public static string PasswordMustInclude {
+            get {
+                return ResourceManager.GetString("PasswordMustInclude", resourceCulture);
             }
         }
         

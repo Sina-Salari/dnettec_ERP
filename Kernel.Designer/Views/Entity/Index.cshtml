@@ -1,0 +1,159 @@
+﻿@model List<Kernel.Domain.Models.Entity>
+
+@{
+    ViewData["Title"] = "Entity List";
+    var AppId = ViewData["AppId"];
+}
+
+<a class="btn btn-primary" id="btn-OpenModal">Add</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+            <th scope="col">Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EntityName</td>
+                <td>
+                    @if (item.Status == Dnettec.Persistence.Common.RecordStatus.IsActive)
+                    {
+                        <span>Active</span>
+                    }
+                    @if (item.Status == Dnettec.Persistence.Common.RecordStatus.DeActive)
+                    {
+                        <span>DeActive</span>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-edit" data-id="@item.Id">Edit</a>
+                    <a class="btn btn-primary" href="/EntityField/@item.Id">Add EntityField</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="modal" id="Modal" tabindex="-1">
+    <div class="modal-dialog-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btn-CloseModal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input id="Id" type="hidden">
+                <input id="AppId" type="hidden" value="@AppId">
+
+                <div class="input-group mb-3">
+                    <input id="EntityName" type="text" class="form-control" placeholder="EntityName" aria-label="EntityName" aria-describedby="basic-addon1">
+                </div>
+
+                <select class="form-select" id="Status">
+                    <option value="1">Active</option>
+                    <option value="2">DeActive</option>
+                </select>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="IsBase">
+                    <label class="form-check-label" for="IsBase">
+                        IsBase
+                    </label>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btn-submit">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+<script>
+    $(document).ready(()=>{
+
+        $("#btn-OpenModal").click(()=>{
+            ClearForm();
+            $("#Modal").show();
+        });
+
+        $("#btn-CloseModal").click(()=>{
+            $("#Modal").hide();
+        });
+
+        $("#btn-submit").click(()=>{
+            var data = {
+                Id : $("#Id").val(),
+                ApplicationId : $("#AppId").val(),
+                EntityName : $("#EntityName").val(),
+                IsBase :  $("#IsBase").prop("checked"),
+                Status : $("#Status").val(),
+            }
+
+            if(Validation(data)){
+                request = $.ajax({
+                    url: "https://localhost:7245/Entity",
+                    type: "post",
+                    data: data
+                });
+                request.done((resposne)=>{
+                    alert("success");
+                    location.replace(location.href);
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+                    if(jqXHR.Status == 409)
+                    {
+                        alert("Duplicate Name");
+                    }
+                    else{
+                        alert("Server Error");
+                    }
+                });
+            } else{
+                alert("Please Resolve Error");
+                return;
+            }
+        });
+
+        $('body').on('click','.btn-edit',function(){
+            request = $.ajax({
+                url: "https://localhost:7245/Entity/Get?Id=" + $(this).attr('data-id'),
+                type: "get"
+            });
+            request.done((resposne)=>{
+                $("#Id").val(resposne.id);
+                $("#EntityName").val(resposne.entityName);
+                $("#Status").val(resposne.status);
+                $("#IsBase").prop("checked",resposne.isBase);
+                $("#Modal").show();
+            });
+        });
+
+        function ClearForm(){
+            $("#Id").val("");
+            $("#EntityName").val("");
+            $("#IsBase").prop("checked",false);
+            $("#Status").val("2");
+        }
+
+        function Validation(data){
+            var isOk = true;
+
+            if(!data.EntityName){
+                isOk = false;
+                $("#EntityName-error").fadeIn();
+            } else{
+                $("#EntityName-error").fadeOut();
+            }
+
+            return isOk;
+        }
+    });
+</script>
+}
+

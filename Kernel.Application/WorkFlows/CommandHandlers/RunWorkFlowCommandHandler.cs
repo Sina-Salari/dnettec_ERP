@@ -91,6 +91,15 @@ namespace Kernel.Application.WorkFlows.CommandHandlers
                     Result = await UnitOfWork.ProcessSteps
                       .QueryAsync(Query);
                 }
+                else if (Process.ProcessType == ProcessType.QueryCommandTop1)
+                {
+                    Result = await UnitOfWork.ProcessSteps
+                       .QueryAsync(Query);
+
+                    Result = Newtonsoft.Json.JsonConvert.SerializeObject(((List<object>)Result)[0]);
+                    Result = (dynamic)Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string,object>>(Result.ToString());
+                    //if(Result.)
+                }
                 else if (Process.ProcessType == ProcessType.ExecuteCommand)
                 {
                     Result = await UnitOfWork.ProcessSteps
@@ -99,7 +108,7 @@ namespace Kernel.Application.WorkFlows.CommandHandlers
 
                 DataSource.Add(new WorkFlowDataSource()
                 {
-                    Key = Step.Id.ToString(),
+                    Key = Step.VariableName.ToString(),
                     Value = Result,
                     Type = JTokenType.Object
                 });
@@ -119,15 +128,15 @@ namespace Kernel.Application.WorkFlows.CommandHandlers
 
                 DataSource.Add(new WorkFlowDataSource()
                 {
-                    Key = Step.Id.ToString(),
+                    Key = Step.VariableName.ToString(),
                     Value = Result,
                     Type = JTokenType.Boolean
                 });
 
                 if ((bool)Result)
                 {
-                    NextStepId = await UnitOfWork.ValidationStepTrues
-                        .GetAsync(p => p.ValidationStepId == Step.RecordId, p => p.WorkFlowStepId);
+                    NextStepId = await UnitOfWork.WorkFlowStepMovments
+                        .GetAsync(p => p.WorkFlowStepId == StepId, p => p.WorkFlowNextStepId);
                 }
                 else
                 {

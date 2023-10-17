@@ -15,5 +15,7 @@
         public MessageSteps.Repositories.IMessageStepRespository MessageSteps { get; }
         public Languages.Repositories.ILanguageRepository Languages { get; }
         public LangMessages.Repositories.ILangMessageRepository LangMessages { get; }
+        public Accounts.Repositories.IAccountRepository Accounts { get; }
+        public Applications.Repositories.IApplicationRepository Applications { get; }
     }
 }

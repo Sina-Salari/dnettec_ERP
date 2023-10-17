@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KeYBWOMur6u6JEU0o2wU9KBsxErcKJbRUjfoegI7dx9CbHoY2FuM1QvAGTbe5XNS/2VtCBZmEnq+rNFwirZgog==",
+  "dgSpecHash": "S9cGWd+yV73wSI/sS14voXKoakrqI/xKtjrnsS6nPdO+nlfcTHd93QZQ/lFyuIKAn1uPCuN5m3t0hPHmtZM+sQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Application\\Kernel.Application.csproj",
+  "projectFilePath": "G:\\Private\\dnettec_ERP\\Kernel.Application\\Kernel.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sinac\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\sinac\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",

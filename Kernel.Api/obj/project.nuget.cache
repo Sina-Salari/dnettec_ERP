@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Sb6LfugVptocwyAd2BiuKmsv6a0PU1q1KXLaFBjbvf9OY3GohPXehujj0b5tKDTzuwCbUsHmvrlJ65aZGS8qUQ==",
+  "dgSpecHash": "jPKZLtRAga3dkVIDXdoOaeSD/Kry80ImLYQzCsMQmO+/MnhSIh5Z58+uzRaKzE6gRDJ87W03dz/IcS3NHJgjXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Api\\Kernel.Api.csproj",
+  "projectFilePath": "G:\\Private\\dnettec_ERP\\Kernel.Api\\Kernel.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sinac\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\sinac\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

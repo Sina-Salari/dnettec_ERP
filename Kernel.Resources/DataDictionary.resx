@@ -120,6 +120,9 @@
   <data name="Bool" xml:space="preserve">
     <value>Bool</value>
   </data>
+  <data name="CapitalLetter" xml:space="preserve">
+    <value>حروف بزرگ لاتین</value>
+  </data>
   <data name="EndPoint" xml:space="preserve">
     <value>endPoint</value>
   </data>
@@ -141,17 +144,29 @@
   <data name="LanguageCode" xml:space="preserve">
     <value>کد زبان</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>ورود</value>
+  </data>
   <data name="MessageName" xml:space="preserve">
     <value>عنوان پیام</value>
   </data>
   <data name="MessageText" xml:space="preserve">
     <value>متن پیام</value>
   </data>
+  <data name="Number" xml:space="preserve">
+    <value>اعداد</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>رمزعبور</value>
+  </data>
   <data name="Regex" xml:space="preserve">
     <value>Regex</value>
   </data>
   <data name="String" xml:space="preserve">
     <value>String</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>نام کاربری</value>
   </data>
   <data name="WorkFlow" xml:space="preserve">
     <value>چرخه</value>

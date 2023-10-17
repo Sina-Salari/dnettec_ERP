@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QdIIYZcTnxXDXxJ4cpe7i0zvURK+PXWedZo2rOdxDrulL+CyPrHthiKMVag8H8wG8mkgc9jB5aUpddC0+RhzJw==",
+  "dgSpecHash": "uXKn1JYg2NzdhiNsPgfwh/gqG7kFv/qALm5cMYehI5xH9SkJCWNL3eSaojAWpXgXkif6JgrU/A72Um78qBlMNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Logging.Persistence\\Logging.Persistence.csproj",
+  "projectFilePath": "G:\\Private\\dnettec_ERP\\Logging.Persistence\\Logging.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sinac\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\sinac\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

@@ -1,5 +1,12 @@
 ﻿using Kernel.ViewModel.Common;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
+using System.Globalization;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Kernel.Application
 {
@@ -102,9 +109,103 @@ namespace Kernel.Application
         {
             foreach (var Data in DataSource)
             {
-                pattern = pattern.Replace("@" + Data.Key, Data.Value.ToString());
+                pattern = pattern.Replace("#" + Data.Key, Data.Value.ToString());
             }
             return pattern;
+        }
+
+        public static string HashSHA256(this string input)
+        {
+            using (var sha256Hash = SHA256.Create())
+            {
+                // ComputeHash - returns byte array  
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+                // Convert byte array to a string   
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
+        public static string HashWithSalt(this string password, Guid salt)
+        {
+            return HashSHA256(password) + salt.ToString();
+        }
+
+        public static bool IsValidEmail(this string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                // Normalize the domain
+                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
+                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
+
+                // Examines the domain part of the email and normalizes it.
+                string DomainMapper(Match match)
+                {
+                    // Use IdnMapping class to convert Unicode domain names.
+                    var idn = new IdnMapping();
+
+                    // Pull out and process domain name (throws ArgumentException on invalid)
+                    string domainName = idn.GetAscii(match.Groups[2].Value);
+
+                    return match.Groups[1].Value + domainName;
+                }
+            }
+            catch (RegexMatchTimeoutException e)
+            {
+                return false;
+            }
+            catch (ArgumentException e)
+            {
+                return false;
+            }
+
+            try
+            {
+                return Regex.IsMatch(email,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
+        }
+
+        public static string GenarateToken(this Guid AccountId, string secretKey, int tokenTimeOut)
+        {
+            var TokenHandler = new JwtSecurityTokenHandler();
+
+            var Key = Encoding.UTF8.GetBytes(secretKey);
+
+            var TokenDescriptor = new SecurityTokenDescriptor()
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim("AccountId",AccountId.ToString())
+                }),
+
+                Expires = DateTime.UtcNow.AddMinutes(tokenTimeOut),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Key), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = TokenHandler.CreateToken(TokenDescriptor);
+
+            return TokenHandler.WriteToken(token);
+        }
+
+        public static string ToShamsi(this DateTime date)
+        {
+            var persian = new PersianCalendar();
+            return $"{persian.GetHour(date)}:{persian.GetMinute(date)} {persian.GetYear(date)}/{persian.GetMonth(date)}/{persian.GetDayOfMonth(date)}";
         }
     }
 }

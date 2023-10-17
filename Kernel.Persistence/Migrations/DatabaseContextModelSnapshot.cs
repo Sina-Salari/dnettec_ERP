@@ -22,6 +22,88 @@ namespace Kernel.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Kernel.Domain.Models.Account", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ApplicationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsBase")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordSalt")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationId");
+
+                    b.ToTable("Accounts", (string)null);
+                });
+
+            modelBuilder.Entity("Kernel.Domain.Models.Application", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DatabaseName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DatabasePassword")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DatabaseSource")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DatabaseUserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DomainName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsBase")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SubDomainName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TokenKey")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TokenTimeOut")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Applications", (string)null);
+                });
+
             modelBuilder.Entity("Kernel.Domain.Models.Component", b =>
                 {
                     b.Property<Guid>("Id")
@@ -47,7 +129,7 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Components");
+                    b.ToTable("Components", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.ComponentItem", b =>
@@ -72,7 +154,7 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("ComponentId");
 
-                    b.ToTable("ComponentItems");
+                    b.ToTable("ComponentItems", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.ComponentItemOption", b =>
@@ -104,7 +186,7 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("PlaceholderId");
 
-                    b.ToTable("ComponentItemOptions");
+                    b.ToTable("ComponentItemOptions", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.ComponetChild", b =>
@@ -131,13 +213,16 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("ParentComponentId");
 
-                    b.ToTable("ComponetChildren");
+                    b.ToTable("ComponetChildren", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.Entity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ApplicationId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("EntityName")
@@ -152,7 +237,9 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Entities");
+                    b.HasIndex("ApplicationId");
+
+                    b.ToTable("Entities", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.EntityField", b =>
@@ -187,7 +274,7 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("EntityId");
 
-                    b.ToTable("EntityFields");
+                    b.ToTable("EntityFields", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.EntityFieldRelation", b =>
@@ -214,38 +301,7 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("EntityId");
 
-                    b.ToTable("EntityFieldRelations");
-                });
-
-            modelBuilder.Entity("Kernel.Domain.Models.EntityFieldValidation", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("EntityFieldId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsBase")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("MessageId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Regex")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EntityFieldId");
-
-                    b.HasIndex("MessageId");
-
-                    b.ToTable("EntityFieldValidations");
+                    b.ToTable("EntityFieldRelations", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.LangMessage", b =>
@@ -276,13 +332,16 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("MessageId");
 
-                    b.ToTable("LangMessages");
+                    b.ToTable("LangMessages", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.Language", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ApplicationId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
@@ -297,13 +356,18 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Languages");
+                    b.HasIndex("ApplicationId");
+
+                    b.ToTable("Languages", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.Message", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ApplicationId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsBase")
@@ -318,7 +382,9 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Messages");
+                    b.HasIndex("ApplicationId");
+
+                    b.ToTable("Messages", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.MessageStep", b =>
@@ -340,7 +406,7 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("MessageId");
 
-                    b.ToTable("MessageSteps");
+                    b.ToTable("MessageSteps", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.Page", b =>
@@ -370,7 +436,7 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("PageTitleId");
 
-                    b.ToTable("Pages");
+                    b.ToTable("Pages", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.PageComponent", b =>
@@ -397,13 +463,16 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("PageId");
 
-                    b.ToTable("PageComponents");
+                    b.ToTable("PageComponents", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.ProcessStep", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ApplicationId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsBase")
@@ -421,7 +490,9 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProcessSteps");
+                    b.HasIndex("ApplicationId");
+
+                    b.ToTable("ProcessSteps", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.RequestPattern", b =>
@@ -451,13 +522,16 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("WorkFlowId");
 
-                    b.ToTable("RequestPatterns");
+                    b.ToTable("RequestPatterns", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.ValidationStep", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ApplicationId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsBase")
@@ -472,7 +546,9 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ValidationSteps");
+                    b.HasIndex("ApplicationId");
+
+                    b.ToTable("ValidationSteps", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.ValidationStepFalse", b =>
@@ -500,7 +576,7 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("WorkFlowStepId");
 
-                    b.ToTable("ValidationStepFalses");
+                    b.ToTable("ValidationStepFalses", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.ValidationStepTrue", b =>
@@ -528,13 +604,16 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("WorkFlowStepId");
 
-                    b.ToTable("ValidationStepTrues");
+                    b.ToTable("ValidationStepTrues", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.WorkFlow", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ApplicationId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsBase")
@@ -549,7 +628,9 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("WorkFlows");
+                    b.HasIndex("ApplicationId");
+
+                    b.ToTable("WorkFlows", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.WorkFlowInput", b =>
@@ -576,7 +657,7 @@ namespace Kernel.Persistence.Migrations
                     b.HasIndex("WorkFlowId")
                         .IsUnique();
 
-                    b.ToTable("WorkFlowInputs");
+                    b.ToTable("WorkFlowInputs", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.WorkFlowResponse", b =>
@@ -603,7 +684,7 @@ namespace Kernel.Persistence.Migrations
                     b.HasIndex("WorkFlowId")
                         .IsUnique();
 
-                    b.ToTable("WorkFlowResponses");
+                    b.ToTable("WorkFlowResponses", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.WorkFlowStep", b =>
@@ -634,7 +715,7 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("WorkFlowId");
 
-                    b.ToTable("WorkFlowSteps");
+                    b.ToTable("WorkFlowSteps", (string)null);
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.WorkFlowStepMovment", b =>
@@ -661,7 +742,18 @@ namespace Kernel.Persistence.Migrations
 
                     b.HasIndex("WorkFlowStepId");
 
-                    b.ToTable("WorkFlowStepMovments");
+                    b.ToTable("WorkFlowStepMovments", (string)null);
+                });
+
+            modelBuilder.Entity("Kernel.Domain.Models.Account", b =>
+                {
+                    b.HasOne("Kernel.Domain.Models.Application", "Application")
+                        .WithMany("Accounts")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Application");
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.ComponentItem", b =>
@@ -713,6 +805,17 @@ namespace Kernel.Persistence.Migrations
                     b.Navigation("ParentComponent");
                 });
 
+            modelBuilder.Entity("Kernel.Domain.Models.Entity", b =>
+                {
+                    b.HasOne("Kernel.Domain.Models.Application", "Application")
+                        .WithMany("Entities")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Application");
+                });
+
             modelBuilder.Entity("Kernel.Domain.Models.EntityField", b =>
                 {
                     b.HasOne("Kernel.Domain.Models.Entity", "Entity")
@@ -743,25 +846,6 @@ namespace Kernel.Persistence.Migrations
                     b.Navigation("EntityField");
                 });
 
-            modelBuilder.Entity("Kernel.Domain.Models.EntityFieldValidation", b =>
-                {
-                    b.HasOne("Kernel.Domain.Models.EntityField", "EntityField")
-                        .WithMany("EntityFieldValidations")
-                        .HasForeignKey("EntityFieldId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Kernel.Domain.Models.Message", "Message")
-                        .WithMany("EntityFieldValidations")
-                        .HasForeignKey("MessageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("EntityField");
-
-                    b.Navigation("Message");
-                });
-
             modelBuilder.Entity("Kernel.Domain.Models.LangMessage", b =>
                 {
                     b.HasOne("Kernel.Domain.Models.Language", "Language")
@@ -773,12 +857,34 @@ namespace Kernel.Persistence.Migrations
                     b.HasOne("Kernel.Domain.Models.Message", "Message")
                         .WithMany("LangMessages")
                         .HasForeignKey("MessageId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Language");
 
                     b.Navigation("Message");
+                });
+
+            modelBuilder.Entity("Kernel.Domain.Models.Language", b =>
+                {
+                    b.HasOne("Kernel.Domain.Models.Application", "Application")
+                        .WithMany("Languages")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Application");
+                });
+
+            modelBuilder.Entity("Kernel.Domain.Models.Message", b =>
+                {
+                    b.HasOne("Kernel.Domain.Models.Application", "Application")
+                        .WithMany("Messages")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Application");
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.MessageStep", b =>
@@ -822,6 +928,17 @@ namespace Kernel.Persistence.Migrations
                     b.Navigation("Page");
                 });
 
+            modelBuilder.Entity("Kernel.Domain.Models.ProcessStep", b =>
+                {
+                    b.HasOne("Kernel.Domain.Models.Application", "Application")
+                        .WithMany("ProcessSteps")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Application");
+                });
+
             modelBuilder.Entity("Kernel.Domain.Models.RequestPattern", b =>
                 {
                     b.HasOne("Kernel.Domain.Models.WorkFlow", "WorkFlow")
@@ -833,6 +950,17 @@ namespace Kernel.Persistence.Migrations
                     b.Navigation("WorkFlow");
                 });
 
+            modelBuilder.Entity("Kernel.Domain.Models.ValidationStep", b =>
+                {
+                    b.HasOne("Kernel.Domain.Models.Application", "Application")
+                        .WithMany("ValidationSteps")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Application");
+                });
+
             modelBuilder.Entity("Kernel.Domain.Models.ValidationStepFalse", b =>
                 {
                     b.HasOne("Kernel.Domain.Models.ValidationStep", "ValidationStep")
@@ -842,9 +970,9 @@ namespace Kernel.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Kernel.Domain.Models.WorkFlowStep", "WorkFlowStep")
-                        .WithMany()
+                        .WithMany("ValidationStepFalses")
                         .HasForeignKey("WorkFlowStepId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("ValidationStep");
@@ -861,14 +989,25 @@ namespace Kernel.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Kernel.Domain.Models.WorkFlowStep", "WorkFlowStep")
-                        .WithMany()
+                        .WithMany("ValidationStepTrues")
                         .HasForeignKey("WorkFlowStepId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("ValidationStep");
 
                     b.Navigation("WorkFlowStep");
+                });
+
+            modelBuilder.Entity("Kernel.Domain.Models.WorkFlow", b =>
+                {
+                    b.HasOne("Kernel.Domain.Models.Application", "Application")
+                        .WithMany("WorkFlows")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Application");
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.WorkFlowInput", b =>
@@ -923,6 +1062,23 @@ namespace Kernel.Persistence.Migrations
                     b.Navigation("WorkFlowStep");
                 });
 
+            modelBuilder.Entity("Kernel.Domain.Models.Application", b =>
+                {
+                    b.Navigation("Accounts");
+
+                    b.Navigation("Entities");
+
+                    b.Navigation("Languages");
+
+                    b.Navigation("Messages");
+
+                    b.Navigation("ProcessSteps");
+
+                    b.Navigation("ValidationSteps");
+
+                    b.Navigation("WorkFlows");
+                });
+
             modelBuilder.Entity("Kernel.Domain.Models.Component", b =>
                 {
                     b.Navigation("ChildComponents");
@@ -948,8 +1104,6 @@ namespace Kernel.Persistence.Migrations
             modelBuilder.Entity("Kernel.Domain.Models.EntityField", b =>
                 {
                     b.Navigation("EntityFieldRelations");
-
-                    b.Navigation("EntityFieldValidations");
                 });
 
             modelBuilder.Entity("Kernel.Domain.Models.Language", b =>
@@ -959,8 +1113,6 @@ namespace Kernel.Persistence.Migrations
 
             modelBuilder.Entity("Kernel.Domain.Models.Message", b =>
                 {
-                    b.Navigation("EntityFieldValidations");
-
                     b.Navigation("LangMessages");
 
                     b.Navigation("PageTitles");
@@ -990,6 +1142,10 @@ namespace Kernel.Persistence.Migrations
 
             modelBuilder.Entity("Kernel.Domain.Models.WorkFlowStep", b =>
                 {
+                    b.Navigation("ValidationStepFalses");
+
+                    b.Navigation("ValidationStepTrues");
+
                     b.Navigation("WorkFlowNextStepMovments");
 
                     b.Navigation("WorkFlowStepMovments");

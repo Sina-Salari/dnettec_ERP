@@ -1,0 +1,260 @@
+﻿@model List<Kernel.Domain.Models.Application>
+
+@{
+    ViewData["Title"] = "Application List";
+}
+
+<a class="btn btn-primary" id="btn-OpenModal">Add</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">SubDomainName</th>
+            <th scope="col">DatabaseName</th>
+            <th scope="col">Status</th>
+            <th scope="col">Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SubDomainName</td>
+                <td>@item.DatabaseName</td>
+                <td>
+                    @if (item.Status == Dnettec.Persistence.Common.RecordStatus.IsActive)
+                    {
+                        <span>Active</span>
+                    }
+                    @if (item.Status == Dnettec.Persistence.Common.RecordStatus.DeActive)
+                    {
+                        <span>DeActive</span>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-edit" data-id="@item.Id">Edit</a>
+                    <a class="btn btn-danger btn-delete" data-id="@item.Id">Delete</a>
+                    <a class="btn btn-info" href="/workflow?AppId=@item.Id">WorkFlow</a>
+                    <a class="btn btn-info" href="/Entity?AppId=@item.Id">Entities</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="modal" id="Modal" tabindex="-1">
+    <div class="modal-dialog-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btn-CloseModal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input id="Id" type="hidden">
+
+                <div class="input-group mb-3">
+                    <input id="DomainName" type="text" class="form-control" placeholder="DomainName" aria-label="DomainName" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input id="SubDomainName" type="text" class="form-control" placeholder="SubDomainName" aria-label="SubDomainName" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input id="DatabaseSource" type="text" class="form-control" placeholder="DatabaseSource" aria-label="DatabaseSource" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input id="DatabaseName" type="text" class="form-control" placeholder="DatabaseName" aria-label="DatabaseName" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input id="DatabaseUserName" type="text" class="form-control" placeholder="DatabaseUserName" aria-label="DatabaseUserName" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input id="DatabasePassword" type="text" class="form-control" placeholder="DatabasePassword" aria-label="DatabasePassword" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input id="TokenKey" type="text" class="form-control" placeholder="TokenKey" aria-label="TokenKey" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input id="TokenTimeOut" type="number" class="form-control" placeholder="TokenTimeOut" aria-label="TokenTimeOut" aria-describedby="basic-addon1">
+                </div>
+
+                <select class="form-select" id="Status">
+                    <option value="1">Active</option>
+                    <option value="2">DeActive</option>
+                </select>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="IsBase">
+                    <label class="form-check-label" for="IsBase">
+                        IsBase
+                    </label>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btn-submit">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+<script>
+    $(document).ready(()=>{
+
+        $("#btn-OpenModal").click(()=>{
+            ClearForm();
+            $("#Modal").show();
+        });
+
+        $("#btn-CloseModal").click(()=>{
+            $("#Modal").hide();
+        });
+
+        $("#btn-submit").click(()=>{
+            var data = {
+                Id : $("#Id").val(),
+                DomainName : $("#DomainName").val(),
+                SubDomainName : $("#SubDomainName").val(),
+                DatabaseSource : $("#DatabaseSource").val(),
+                DatabaseName : $("#DatabaseName").val(),
+                DatabaseUserName: $("#DatabaseUserName").val(),
+                DatabasePassword : $("#DatabasePassword").val(),
+                TokenKey: $("#TokenKey").val(),
+                TokenTimeOut: $("#TokenTimeOut").val(),
+                IsBase :  $("#IsBase").prop("checked"),
+                Status : $("#Status").val(),
+            }
+
+            if(Validation(data)){
+                request = $.ajax({
+                    url: "https://localhost:7245/Applications",
+                    type: "post",
+                    data: data
+                });
+                request.done((resposne)=>{
+                    alert("success");
+                    location.replace(location.href);
+                });
+            } else{
+                alert("Please Resolve Error");
+                return;
+            }
+        });
+
+        $('body').on('click','.btn-delete',function(){
+            var Id = $(this).attr('data-id');
+            request = $.ajax({
+                url: "https://localhost:7245/Applications?Id=" + Id,
+                type: "delete",
+            });
+            request.done((resposne)=>{
+                alert("success");
+                location.replace(location.href);
+            });
+        });
+
+        $('body').on('click','.btn-edit',function(){
+            request = $.ajax({
+                url: "https://localhost:7245/Applications/Get?Id=" + $(this).attr('data-id'),
+                type: "get"
+            });
+            request.done((resposne)=>{
+                $("#Id").val(resposne.id);
+                $("#DomainName").val(resposne.domainName);
+                $("#SubDomainName").val(resposne.subDomainName);
+                $("#DatabaseSource").val(resposne.databaseSource);
+                $("#DatabaseName").val(resposne.databaseName);
+                $("#DatabaseUserName").val(resposne.databaseUserName);
+                $("#DatabasePassword").val(resposne.databasePassword);
+                $("#TokenKey").val(resposne.tokenKey);
+                $("#TokenTimeOut").val(resposne.tokenTimeOut);
+                $("#Status").val(resposne.status);
+                $("#IsBase").prop("checked",resposne.isBase);
+                $("#Modal").show();
+            });
+        });
+
+        function ClearForm(){
+            $("#Id").val("");
+            $("#DomainName").val("");
+            $("#SubDomainName").val("");
+            $("#DatabaseSource").val("");
+            $("#DatabaseName").val("");
+            $("#DatabaseUserName").val("");
+            $("#DatabasePassword").val("");
+            $("#TokenKey").val("");
+            $("#TokenTimeOut").val("");
+            $("#IsBase").prop("checked",false);
+            $("#Status").val("2");
+        }
+
+        function Validation(data){
+            var isOk = true;
+
+            if(!data.DomainName){
+                isOk = false;
+                $("#DomainName-error").fadeIn();
+            } else{
+                $("#DomainName-error").fadeOut();
+            }
+
+            if(!data.SubDomainName){
+                isOk = false;
+                $("#SubDomainName-error").fadeIn();
+            } else{
+                $("#SubDomainName-error").fadeOut();
+            }
+
+            if(!data.DatabaseSource){
+                isOk = false;
+                $("#DatabaseSource-error").fadeIn();
+            } else{
+                $("#DatabaseSource-error").fadeOut();
+            }
+
+            if(!data.DatabaseName){
+                isOk = false;
+                $("#DatabaseName-error").fadeIn();
+            } else{
+                $("#DatabaseName-error").fadeOut();
+            }
+
+            if(!data.DatabaseUserName){
+                isOk = false;
+                $("#DatabaseUserName-error").fadeIn();
+            } else{
+                $("#DatabaseUserName-error").fadeOut();
+            }
+
+            if(!data.DatabasePassword){
+                isOk = false;
+                $("#DatabasePassword-error").fadeIn();
+            } else{
+                $("#DatabasePassword-error").fadeOut();
+            }
+
+            if(!data.TokenKey){
+                isOk = false;
+                $("#TokenKey-error").fadeIn();
+            } else{
+                $("#TokenKey-error").fadeOut();
+            }
+
+            if(!data.TokenTimeOut){
+                isOk = false;
+                $("#TokenTimeOut-error").fadeIn();
+            } else{
+                $("#TokenTimeOut-error").fadeOut();
+            }
+
+            return isOk;
+        }
+    });
+</script>
+}

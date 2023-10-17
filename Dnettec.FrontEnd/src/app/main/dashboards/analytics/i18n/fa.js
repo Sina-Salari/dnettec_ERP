@@ -1,0 +1,31 @@
+const locale = {
+  AGE: 'سن',
+  ANALYTICS_DASHBOARD: 'داشبورد تحلیلی',
+  MONITOR_METRICS: 'شاخص هارا بررسی کنید',
+  SETTINGS: 'تنظیمات',
+  EXPORT: 'خروجی اکسل',
+  THIRTY_DAYS: '30 روز',
+  CONVERSIONS: 'بازگشتی',
+  BELOW_TARGET: 'زیر هدف',
+  GENDER: 'جنسیت',
+  IMPRESSIONS: 'بازخوردها',
+  LANGUAGE: 'زبان',
+  NEW_VS_RETURNING: 'جدید در مقابل بازگشتی ها',
+  VISITORS_OVERVIEW: 'جمع‌بندی بازدیدکنندگان',
+  NUMBER_OF_UNIQUE_VISITORS: 'بازدیدکنندگان منحصربه‌فرد',
+  VISITORS_VS_PAGEVIEWS: 'بازدیدکنندگان دربرابر بازدیدهای صفحه',
+  OVERALL_SCORE: 'نمره نهایی',
+  SCORE_IS_CALCULATED: 'نمره با محاسبه نسبت بازدیدکنندگان به بازدید کل محاسبه میشود',
+  AVERAGE_RATIO: 'نسبت میانگین',
+  AVERAGE_RATIO_IS: 'میانگین نسبت بازدیدکنندگان به بازدید کل',
+  PREDICTED_RATIO: 'نسبت پیش‌بینی شده',
+  PREDICTED_RATIO_IS: 'نسبت پیش‌بینی شده بر اساس داده های قبلی محاسبه میشود',
+  VISITS: 'بازدید‌ها',
+  YOUR_AUDIENCE: 'مخاطبان شما',
+  DEMOGRAPHIC_DATA_USERS: 'داده‌های دموگرافیک کاربران شما',
+  AGE: 'سن',
+  AGE: 'سن',
+
+};
+
+export default locale;

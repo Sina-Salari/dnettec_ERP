@@ -126,4 +126,7 @@
   <data name="InsertSuccess" xml:space="preserve">
     <value>افزودن {0} با موفقیت انجام شد</value>
   </data>
+  <data name="OprationSuccess" xml:space="preserve">
+    <value>با موفقیت انجام شد {0}</value>
+  </data>
 </root>

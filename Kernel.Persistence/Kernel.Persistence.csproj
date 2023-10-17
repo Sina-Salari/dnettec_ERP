@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="EntityFields\Repositories\" />
-    <Folder Include="EntityFieldValidations\Repositories\" />
     <Folder Include="EntityFieldRelations\Repositories\" />
   </ItemGroup>
 

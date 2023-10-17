@@ -86,5 +86,14 @@ namespace Kernel.Resources.Messages {
                 return ResourceManager.GetString("InsertSuccess", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to با موفقیت انجام شد {0}.
+        /// </summary>
+        public static string OprationSuccess {
+            get {
+                return ResourceManager.GetString("OprationSuccess", resourceCulture);
+            }
+        }
     }
 }

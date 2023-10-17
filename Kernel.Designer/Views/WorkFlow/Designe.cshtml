@@ -1,0 +1,440 @@
+﻿@model Kernel.Designer.Controllers.DesigneVM
+
+@{
+    ViewData["Title"] = "WorkFlow Designe";
+}
+
+@if (Model != null)
+{
+    <input type="hidden" id="WorkFlowId" value="@ViewData["WorkFlowId"]">
+
+    <div>
+        <form class="row g-3 shadow rounded p-3 mt-2 pb-4">
+            <div class="col-md-6">
+                <label for="Controller-RequestPattern" class="form-label">Controller</label>
+                <input type="text" class="form-control" id="Controller-RequestPattern" value="@Model.RequestPattern.Controller">
+            </div>
+            <div class="col-md-6">
+                <label for="Action-RequestPattern" class="form-label">Action</label>
+                <input type="text" class="form-control" id="Action-RequestPattern" value="@Model.RequestPattern.Action">
+            </div>
+            <div class="col-md-6">
+                <select class="form-select" id="Status-RequestPattern" asp-for="@Model.RequestPattern.Status">
+                    <option value="1">Active</option>
+                    <option value="2">DeActive</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <button type="button" id="btn-submit-RequestPattern" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+        <form class="row g-3 shadow rounded p-3 mt-4 pb-4">
+            <div class="col-md-12">
+                <label for="BodyJson-WorkFlowInput" class="form-label">BodyJson</label>
+                <textarea type="text" rows="3" class="form-control" id="BodyJson-WorkFlowInput" asp-for="@Model.WorkFlowInput.BodyJson"></textarea>
+            </div>
+            <div class="col-md-6">
+                <button type="button" id="btn-submit-WorkFlowInput" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+        <form class="row g-3 shadow rounded p-3 mt-4 pb-4">
+            <div class="col-md-12">
+                <label for="ResponseJson-WorkFlowResponse" class="form-label">ResponseJson</label>
+                <textarea type="text" rows="3" class="form-control" id="ResponseJson-WorkFlowResponse" asp-for="@Model.WorkFlowResponse.ResponseJson"></textarea>
+            </div>
+            <div class="col-md-6">
+                <button type="button" id="btn-submit-WorkFlowResponse" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+        <div class="row g-3 shadow rounded p-3 mt-4 pb-4">
+            <div class="row">
+                <a id="btn-OpenModal-WorkFlowStep" class="btn btn-primary col-6">Add +</a>
+                <a id="btn-Movment-WorkFlowStep" class="btn btn-warning col-6">Movment</a>
+            </div>
+            <div class="responsive-table">
+                <table class="table" id="sortable">
+                    <thead>
+                        <tr>
+                            <th scope="col">RecordType</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Operation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.WorkFlowSteps)
+                        {
+                            <tr class="ui-state-default tr-table-step" data-id="@item.Id">
+                                <td>@item.RecordType</td>
+                                @if (item.Status == Dnettec.Persistence.Common.RecordStatus.IsActive)
+                                {
+                                    <td>Active</td>
+                                }
+                                else
+                                {
+                                    <td>DeActive</td>
+                                }
+                                <td>
+                                    <a class="btn btn-warning btn-WorkFlowStep-edit" data-id="@item.Id">Edit</a>
+                                    <a class="btn btn-danger btn-WorkFlowStep-delete" data-id="@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="Modal-WorkFlowStep" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" id="btn-CloseModal-WorkFlowStep" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input id="Id-WorkFlowStep" type="hidden">
+                    <input id="RecordId-WorkFlowStep" type="hidden">
+
+                    <div class="col-md-12 mb-3">
+                        <label for="VariableName-WorkFlowStep" class="form-label">VariableName</label>
+                        <input type="text" class="form-control" id="VariableName-WorkFlowStep">
+                    </div>
+
+                    <select class="form-select mb-3" id="RecordType-WorkFlowStep">
+                        <option value="1">Process</option>
+                        <option value="2">Validation</option>
+                        <option value="3">Method</option>
+                        <option value="4">WorkFlow</option>
+                        <option value="5">ErrorMessage</option>
+                        <option value="6">SuccessMessage</option>
+                    </select>
+
+                    <select class="form-select mb-3" id="ProcessType-WorkFlowStep">
+                        <option value="5">QuerySingle</option>
+                        <option value="2">QueryList</option>
+                        <option value="3">Command</option>
+                    </select>
+
+                    <div class="col-md-12 mb-3" id="Query-WorkFlowStep-box">
+                        <label for="Query-WorkFlowStep" class="form-label">Query</label>
+                        <textarea type="text" rows="3" class="form-control" id="Query-WorkFlowStep"></textarea>
+                    </div>
+
+
+                    <select class="form-select mb-3" id="MessageId-WorkFlowStep">
+                    </select>
+
+                    <select class="form-select mb-3" id="Status-WorkFlowStep">
+                        <option value="1">Active</option>
+                        <option value="2">DeActive</option>
+                    </select>
+
+                    <div class="form-check col-6">
+                        <input class="form-check-input" type="checkbox" value="" id="IsBase-WorkFlowStep">
+                        <label class="form-check-label" for="IsBase-WorkFlowStep">
+                            IsBase
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn-submit-WorkFlowStep">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts{
+
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(()=>{
+
+        $("#btn-submit-RequestPattern").click(()=>{
+            var data = {
+                WorkFlowId : $("#WorkFlowId").val(),
+                Controller : $("#Controller-RequestPattern").val(),
+                Action : $("#Action-RequestPattern").val(),
+                Status : $("#Status-RequestPattern").val(),
+            }
+
+            if(Validation_RequestPattern(data)){
+                request = $.ajax({
+                    url: "https://localhost:7245/RequestPattern",
+                    type: "post",
+                    data: data
+                });
+                request.done((resposne)=>{
+                    alert("success");
+                    location.replace(location.href);
+                });
+            } else{
+                alert("Please Resolve Error");
+                return;
+            }
+        });
+
+        function Validation_RequestPattern(data){
+            var isOk = true;
+
+            if(!data.Controller){
+                isOk = false;
+                $("#Controller-RequestPattern-error").fadeIn();
+            } else{
+                $("#Controller-RequestPattern-error").fadeOut();
+            }
+
+            if(!data.Action){
+                isOk = false;
+                $("#Action-RequestPattern-error").fadeIn();
+            } else{
+                $("#Action-RequestPattern-error").fadeOut();
+            }
+
+            return isOk;
+        }
+
+
+        $("#btn-submit-WorkFlowInput").click(()=>{
+            var data = {
+                WorkFlowId : $("#WorkFlowId").val(),
+                BodyJson : $("#BodyJson-WorkFlowInput").val(),
+            }
+
+            if(Validation_WorkFlowInput(data)){
+                request = $.ajax({
+                    url: "https://localhost:7245/WorkFlowInput",
+                    type: "post",
+                    data: data
+                });
+                request.done((resposne)=>{
+                    alert("success");
+                    location.replace(location.href);
+                });
+            } else{
+                alert("Please Resolve Error");
+                return;
+            }
+        });
+
+        function Validation_WorkFlowInput(data){
+            var isOk = true;
+
+            if(!data.BodyJson){
+                isOk = false;
+                $("#BodyJson-WorkFlowInput-error").fadeIn();
+            } else{
+                $("#BodyJson-WorkFlowInput-error").fadeOut();
+            }
+
+            return isOk;
+        }
+
+
+        $("#btn-submit-WorkFlowResponse").click(()=>{
+            var data = {
+                WorkFlowId : $("#WorkFlowId").val(),
+                ResponseJson : $("#ResponseJson-WorkFlowResponse").val(),
+            }
+
+            if(Validation_WorkFlowResponse(data)){
+                request = $.ajax({
+                    url: "https://localhost:7245/WorkFlowResponse",
+                    type: "post",
+                    data: data
+                });
+                request.done((resposne)=>{
+                    alert("success");
+                    location.replace(location.href);
+                });
+            } else{
+                alert("Please Resolve Error");
+                return;
+            }
+        });
+
+        function Validation_WorkFlowResponse(data){
+            var isOk = true;
+
+            if(!data.ResponseJson){
+                isOk = false;
+                $("#ResponseJson-WorkFlowResponse-error").fadeIn();
+            } else{
+                $("#ResponseJson-WorkFlowResponse-error").fadeOut();
+            }
+
+            return isOk;
+        }
+
+
+        $("#btn-OpenModal-WorkFlowStep").click(()=>{
+            ClearForm_WorkFlowStep();
+            $("#Modal-WorkFlowStep").show();
+        });
+
+        $("#btn-CloseModal-WorkFlowStep").click(()=>{
+            $("#Modal-WorkFlowStep").hide();
+        });
+
+        $("#btn-submit-WorkFlowStep").click(()=>{
+            var data = {
+                WorkFlowId : $("#WorkFlowId").val(),
+                Id : $("#Id-WorkFlowStep").val(),
+                RecordId : $("#RecordId-WorkFlowStep").val(),
+                Query :  $("#Query-WorkFlowStep").val(),
+                VariableName : $("#VariableName-WorkFlowStep").val(),
+                ProcessType :  $("#ProcessType-WorkFlowStep").val(),
+                RecordType :  $("#RecordType-WorkFlowStep").val(),
+                Status : $("#Status-WorkFlowStep").val(),
+                IsBase :  $("#IsBase-WorkFlowStep").prop("checked"),
+            }
+
+            if(Validation_WorkFlowStep(data)){
+                request = $.ajax({
+                    url: "https://localhost:7245/WorkFlowStep",
+                    type: "post",
+                    data: data
+                });
+                request.done((resposne)=>{
+                    alert("success");
+                    location.replace(location.href);
+                });
+            } else{
+                alert("Please Resolve Error");
+                return;
+            }
+        });
+
+        $("#RecordType-WorkFlowStep").change(()=>{
+            var value = $("#RecordType-WorkFlowStep").val();
+            change_WorkFlowStep_Modal_Input(value);
+        });
+
+
+        $('body').on('click','.btn-WorkFlowStep-delete',function(){
+            var Id = $(this).attr('data-id');
+            request = $.ajax({
+                url: "https://localhost:7245/WorkFlowStep?Id=" + Id,
+                type: "delete",
+            });
+            request.done((resposne)=>{
+                alert("success");
+                $(this).closest('.tr-table-step').remove();
+                change_Movment();
+            });
+        });
+
+        $('body').on('click','.btn-WorkFlowStep-edit',function(){
+            request = $.ajax({
+                url: "https://localhost:7245/WorkFlowStep/Get?Id=" + $(this).attr('data-id'),
+                type: "get"
+            });
+            request.done((resposne)=>{
+
+                $("#Id-WorkFlowStep").val(resposne.id);
+                $("#VariableName-WorkFlowStep").val(resposne.variableName);
+                $("#RecordId-WorkFlowStep").val(resposne.recordId);
+                $("#RecordType-WorkFlowStep").val(resposne.recordType);
+                $("#RecordType-WorkFlowStep").prop('disabled',true);
+                $("#IsBase-WorkFlowStep").prop("checked",resposne.isBase);
+                $("#Status-WorkFlowStep").val(resposne.status);
+
+                $("#Query-WorkFlowStep").val(resposne.query);
+                $("#ProcessType-WorkFlowStep").val(resposne.processType);
+
+                change_WorkFlowStep_Modal_Input(resposne.recordType);
+
+                $("#Modal-WorkFlowStep").show();
+            });
+        });
+
+        function ClearForm_WorkFlowStep(){
+            $("#Id-WorkFlowStep").val("");
+            $("#VariableName-WorkFlowStep").val("");
+            $("#RecordType-WorkFlowStep").val("1");
+            $("#IsBase-WorkFlowStep").prop("checked",false);
+            $("#Status-WorkFlowStep").val("2");
+            $("#RecordType-WorkFlowStep").prop('disabled',false);
+
+            $("#Query-WorkFlowStep").val("");
+            $("#ProcessType-WorkFlowStep").val("1");
+
+            change_WorkFlowStep_Modal_Input(1)
+        }
+
+        function Validation_WorkFlowStep(data){
+            var isOk = true;
+
+            if(data.VariableName == ''){
+                isOk = false;
+            }
+
+            return isOk;
+        }
+
+        function change_WorkFlowStep_Modal_Input(value){
+            $("#Query-WorkFlowStep-box").addClass('d-none');
+            $("#ProcessType-WorkFlowStep").addClass('d-none');
+            $("#MessageId-WorkFlowStep").addClass('d-none');
+
+            if(value == 1){
+                $("#Query-WorkFlowStep-box").removeClass('d-none');
+                $("#ProcessType-WorkFlowStep").removeClass('d-none');
+            }
+
+            if(value == 2){
+                $("#Query-WorkFlowStep-box").removeClass('d-none');
+            }
+
+            if(value == 5 || value == 6){
+                $("#MessageId-WorkFlowStep").removeClass('d-none');
+            }
+        }
+
+        $("#sortable tbody").sortable({
+            cursor: "move",
+            placeholder: "sortable-placeholder",
+            helper: function(e, tr)
+            {
+            var $originals = tr.children();
+            var $helper = tr.clone();
+            $helper.children().each(function(index)
+            {
+            // Set helper cell sizes to match the original sizes
+            $(this).width($originals.eq(index).width());
+            });
+            return $helper;
+            }
+        }).disableSelection();
+
+        function change_Movment(){
+            var ids = [];
+            var table = $('.tr-table-step').each(function(index,value){
+                ids.push($(value).attr('data-id'));
+            });
+
+            var data = {
+                ids : ids
+            }
+
+            request = $.ajax({
+                url: "https://localhost:7245/WorkFlowStep/Movment",
+                type: "post",
+                data : data
+            });
+            request.done((resposne)=>{
+                alert("success");
+            });
+        }
+
+        $('#btn-Movment-WorkFlowStep').click(()=>{
+            change_Movment();
+        });
+    });
+</script>
+}

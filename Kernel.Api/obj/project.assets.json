@@ -4748,11 +4748,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Api\\Kernel.Api.csproj",
+      "projectUniqueName": "G:\\Private\\dnettec_ERP\\Kernel.Api\\Kernel.Api.csproj",
       "projectName": "Kernel.Api",
-      "projectPath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Api\\Kernel.Api.csproj",
+      "projectPath": "G:\\Private\\dnettec_ERP\\Kernel.Api\\Kernel.Api.csproj",
       "packagesPath": "C:\\Users\\sinac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Api\\obj\\",
+      "outputPath": "G:\\Private\\dnettec_ERP\\Kernel.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -4775,8 +4775,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Core\\Kernel.Core.csproj": {
-              "projectPath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Core\\Kernel.Core.csproj"
+            "G:\\Private\\dnettec_ERP\\Kernel.Core\\Kernel.Core.csproj": {
+              "projectPath": "G:\\Private\\dnettec_ERP\\Kernel.Core\\Kernel.Core.csproj"
             }
           }
         }

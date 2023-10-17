@@ -12,7 +12,8 @@
 			{
 			}
 
-			public const string Controller = "[controller]";
+			public const string Controller = "Api/[controller]";
+			public const string DynamicController = "[controller]";
 		}
 	}
 }

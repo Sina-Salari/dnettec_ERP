@@ -6,6 +6,8 @@ namespace Kernel.Domain.Models
 {
     public class WorkFlowStep : BaseEntity
     {
+        public string VariableName { get; set; }
+
         public bool IsFirst { get; set; }
 
         public Guid RecordId { get; set; }
@@ -17,5 +19,7 @@ namespace Kernel.Domain.Models
 
         public virtual List<WorkFlowStepMovment> WorkFlowStepMovments { get; set; }
         public virtual List<WorkFlowStepMovment> WorkFlowNextStepMovments { get; set; }
+        public virtual List<ValidationStepFalse> ValidationStepFalses { get; set; }
+        public virtual List<ValidationStepTrue> ValidationStepTrues { get; set; }
     }
 }

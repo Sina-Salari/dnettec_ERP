@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uPQf2eq46lf2wpzpYQeUCdjpyQUO4wf8TcnmoLn92qZTr+2wxb5s+kbMHuCWgemm0hcw1JxXnqRbvZRVdUydwQ==",
+  "dgSpecHash": "48g059xOAWaus6enwmWnmc9j5VjVngVGnvWkXCKkgQXXK7u42nFn3810pQWUbi4mnZaZVrIPY8xYaJ2ZyiFBkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Dnettec\\Dnettec.csproj",
+  "projectFilePath": "G:\\Private\\dnettec_ERP\\Dnettec\\Dnettec.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sinac\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\sinac\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

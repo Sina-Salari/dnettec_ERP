@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WZFleP7vOJSPJ4FslJShNDup1exbvoz+KpTjEM/WOkwVgDAWSGiRVWYAbT6DqjwZF+jM9bIohW4BRqrzWCNrZQ==",
+  "dgSpecHash": "msBJsPPIpLlnDVV/1b1HTiyISyelKyXkkvdGASLoXacUA6lhJ+L/sKsy/uxNBR0mBCKeHfUI0Cy6empjMGch+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Logging.Domain\\Logging.Domain.csproj",
+  "projectFilePath": "G:\\Private\\dnettec_ERP\\Logging.Domain\\Logging.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sinac\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\sinac\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

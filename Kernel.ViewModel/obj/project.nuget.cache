@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5wHC3r2MCJxas1zXRxVImvQ/+NAoJwFRLteFKPfBpAPnkC+SXHniH8A/0qErVAJqsGOQwtN69FmqUuE2NvaIzQ==",
+  "dgSpecHash": "ueX1+lPh0a4I4pe5V4SI2BkAUSrMFHG8gLqKYXfbL001urULGruZ9CeIg1tVgMSFXS1M1I8rpT2EDiTBQ1VfGw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.ViewModel\\Kernel.ViewModel.csproj",
+  "projectFilePath": "G:\\Private\\dnettec_ERP\\Kernel.ViewModel\\Kernel.ViewModel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sinac\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
   ],

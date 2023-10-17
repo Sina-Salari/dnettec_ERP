@@ -18,6 +18,7 @@ namespace Dnettec.Persistence.Common
 
 		// **********
 		public string ConnectionString { get; set; }
+
 		// **********
 
 		// **********

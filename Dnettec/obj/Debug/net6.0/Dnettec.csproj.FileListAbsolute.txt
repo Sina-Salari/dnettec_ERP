@@ -10,3 +10,15 @@ C:\Users\sinac\source\repos\dnettec_ERP\Dnettec\obj\Debug\net6.0\Dnettec.csproj.
 C:\Users\sinac\source\repos\dnettec_ERP\Dnettec\obj\Debug\net6.0\Dnettec.dll
 C:\Users\sinac\source\repos\dnettec_ERP\Dnettec\obj\Debug\net6.0\ref\Dnettec.dll
 C:\Users\sinac\source\repos\dnettec_ERP\Dnettec\obj\Debug\net6.0\Dnettec.pdb
+G:\Private\dnettec_ERP\Dnettec\bin\Debug\net6.0\Dnettec.deps.json
+G:\Private\dnettec_ERP\Dnettec\bin\Debug\net6.0\Dnettec.dll
+G:\Private\dnettec_ERP\Dnettec\bin\Debug\net6.0\ref\Dnettec.dll
+G:\Private\dnettec_ERP\Dnettec\bin\Debug\net6.0\Dnettec.pdb
+G:\Private\dnettec_ERP\Dnettec\obj\Debug\net6.0\Dnettec.csproj.AssemblyReference.cache
+G:\Private\dnettec_ERP\Dnettec\obj\Debug\net6.0\Dnettec.GeneratedMSBuildEditorConfig.editorconfig
+G:\Private\dnettec_ERP\Dnettec\obj\Debug\net6.0\Dnettec.AssemblyInfoInputs.cache
+G:\Private\dnettec_ERP\Dnettec\obj\Debug\net6.0\Dnettec.AssemblyInfo.cs
+G:\Private\dnettec_ERP\Dnettec\obj\Debug\net6.0\Dnettec.csproj.CoreCompileInputs.cache
+G:\Private\dnettec_ERP\Dnettec\obj\Debug\net6.0\Dnettec.dll
+G:\Private\dnettec_ERP\Dnettec\obj\Debug\net6.0\ref\Dnettec.dll
+G:\Private\dnettec_ERP\Dnettec\obj\Debug\net6.0\Dnettec.pdb

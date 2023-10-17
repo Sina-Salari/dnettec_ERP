@@ -70,6 +70,15 @@ namespace Kernel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حروف بزرگ لاتین.
+        /// </summary>
+        public static string CapitalLetter {
+            get {
+                return ResourceManager.GetString("CapitalLetter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to endPoint.
         /// </summary>
         public static string EndPoint {
@@ -133,6 +142,15 @@ namespace Kernel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ورود.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to عنوان پیام.
         /// </summary>
         public static string MessageName {
@@ -151,6 +169,24 @@ namespace Kernel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اعداد.
+        /// </summary>
+        public static string Number {
+            get {
+                return ResourceManager.GetString("Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to رمزعبور.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Regex.
         /// </summary>
         public static string Regex {
@@ -165,6 +201,15 @@ namespace Kernel.Resources {
         public static string String {
             get {
                 return ResourceManager.GetString("String", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نام کاربری.
+        /// </summary>
+        public static string UserName {
+            get {
+                return ResourceManager.GetString("UserName", resourceCulture);
             }
         }
         

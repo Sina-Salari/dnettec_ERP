@@ -1,8 +1,10 @@
 ﻿using Kernel.Domain.Models;
 using Kernel.Persistence.ComponetChildren.Configurations;
 using Kernel.Persistence.EntityFieldRelations.Configurations;
+using Kernel.Persistence.LangMessages.Configurations;
 using Kernel.Persistence.Pages.Configurations;
 using Kernel.Persistence.WorkFlowStepMovments.Configurations;
+using Kernel.Persistence.WorkFlowSteps.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kernel.Persistence.Common.Context
@@ -16,9 +18,11 @@ namespace Kernel.Persistence.Common.Context
         }
 
         // **********
+        public DbSet<Application> Applications { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+
         public DbSet<Entity> Entities { get; set; }
         public DbSet<EntityField> EntityFields { get; set; }
-        public DbSet<EntityFieldValidation> EntityFieldValidations { get; set; }
         public DbSet<EntityFieldRelation> EntityFieldRelations { get; set; }
 
         public DbSet<Language> Languages { get; set; }
@@ -54,6 +58,8 @@ namespace Kernel.Persistence.Common.Context
             modelBuilder.ApplyConfiguration(new WorkFlowStepMovmentConfigurations());
             modelBuilder.ApplyConfiguration(new ComponetChildConfigurations());
             modelBuilder.ApplyConfiguration(new PageConfigurations());
+            modelBuilder.ApplyConfiguration(new LangMessageConfigurations());
+            modelBuilder.ApplyConfiguration(new WorkFlowStepConfigurations());
             base.OnModelCreating(modelBuilder);
         }
     }

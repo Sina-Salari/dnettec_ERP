@@ -10,7 +10,13 @@ namespace Kernel.Domain.Enums
     {
         public enum FieldType
         {
-            Int = 1
+            Int = 1,
+            String = 2,
+            DateTime = 3,
+            Boolean = 4,
+            Guid = 5,
+            FK = 6,
+            Enum = 7,
         }
 
         public enum ProcessType
@@ -18,7 +24,8 @@ namespace Kernel.Domain.Enums
             Query = 1,
             QueryCommand = 2,
             ExecuteCommand = 3,
-            ExecuteProvider = 4
+            ExecuteProvider = 4,
+            QueryCommandTop1 = 5,
         }
 
         public enum WorkFlowStepType

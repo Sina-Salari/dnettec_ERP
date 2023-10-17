@@ -15,7 +15,6 @@ namespace Kernel.Persistence.Common.Context
         // **********
         public DbSet<Entity> Entities { get; set; }
         public DbSet<EntityField> EntityFields { get; set; }
-        public DbSet<EntityFieldValidation> EntityFieldValidations { get; set; }
         public DbSet<EntityFieldRelation> EntityFieldRelations { get; set; }
         public DbSet<LangMessage> LangMessages { get; set; }
         public DbSet<Language> Languages { get; set; }

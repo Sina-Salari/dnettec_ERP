@@ -85,7 +85,12 @@
       "ProjectGuid": "f8469379-ea73-4979-bc2f-7d71cf1ff4d6",
       "DisplayName": "WebApplication1",
       "ColorIndex": 15
+    },
+    "3265f2b2-c607-458a-b8b1-64defcbd78d2": {
+      "ProjectGuid": "3265f2b2-c607-458a-b8b1-64defcbd78d2",
+      "DisplayName": "Kernel.Designer",
+      "ColorIndex": 0
     }
   },
-  "NextColorIndex": 0
+  "NextColorIndex": 1
 }

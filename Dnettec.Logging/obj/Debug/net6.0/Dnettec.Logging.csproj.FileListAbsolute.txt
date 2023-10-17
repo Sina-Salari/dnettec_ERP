@@ -10,3 +10,15 @@ C:\Users\sinac\source\repos\dnettec_ERP\Dnettec.Logging\bin\Debug\net6.0\Dnettec
 C:\Users\sinac\source\repos\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\Dnettec.Logging.dll
 C:\Users\sinac\source\repos\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\ref\Dnettec.Logging.dll
 C:\Users\sinac\source\repos\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\Dnettec.Logging.pdb
+G:\Private\dnettec_ERP\Dnettec.Logging\bin\Debug\net6.0\Dnettec.Logging.deps.json
+G:\Private\dnettec_ERP\Dnettec.Logging\bin\Debug\net6.0\Dnettec.Logging.dll
+G:\Private\dnettec_ERP\Dnettec.Logging\bin\Debug\net6.0\ref\Dnettec.Logging.dll
+G:\Private\dnettec_ERP\Dnettec.Logging\bin\Debug\net6.0\Dnettec.Logging.pdb
+G:\Private\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\Dnettec.Logging.csproj.AssemblyReference.cache
+G:\Private\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\Dnettec.Logging.GeneratedMSBuildEditorConfig.editorconfig
+G:\Private\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\Dnettec.Logging.AssemblyInfoInputs.cache
+G:\Private\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\Dnettec.Logging.AssemblyInfo.cs
+G:\Private\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\Dnettec.Logging.csproj.CoreCompileInputs.cache
+G:\Private\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\Dnettec.Logging.dll
+G:\Private\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\ref\Dnettec.Logging.dll
+G:\Private\dnettec_ERP\Dnettec.Logging\obj\Debug\net6.0\Dnettec.Logging.pdb

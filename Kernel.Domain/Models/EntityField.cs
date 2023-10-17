@@ -7,7 +7,6 @@ namespace Kernel.Domain.Models
     {
         public EntityField()
         {
-            EntityFieldValidations = new List<EntityFieldValidation>();
             EntityFieldRelations = new List<EntityFieldRelation>();
         }
 
@@ -22,7 +21,6 @@ namespace Kernel.Domain.Models
         [ForeignKey("EntityId")]
         public virtual Entity Entity { get;  set; }
 
-        public virtual List<EntityFieldValidation> EntityFieldValidations { get;  set; }
         public virtual List<EntityFieldRelation> EntityFieldRelations { get;  set; }
     }
 }

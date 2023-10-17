@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Resources\\Kernel.Resources.csproj": {}
+    "G:\\Private\\dnettec_ERP\\Kernel.Resources\\Kernel.Resources.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Resources\\Kernel.Resources.csproj": {
+    "G:\\Private\\dnettec_ERP\\Kernel.Resources\\Kernel.Resources.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Resources\\Kernel.Resources.csproj",
+        "projectUniqueName": "G:\\Private\\dnettec_ERP\\Kernel.Resources\\Kernel.Resources.csproj",
         "projectName": "Kernel.Resources",
-        "projectPath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Resources\\Kernel.Resources.csproj",
+        "projectPath": "G:\\Private\\dnettec_ERP\\Kernel.Resources\\Kernel.Resources.csproj",
         "packagesPath": "C:\\Users\\sinac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sinac\\source\\repos\\dnettec_ERP\\Kernel.Resources\\obj\\",
+        "outputPath": "G:\\Private\\dnettec_ERP\\Kernel.Resources\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

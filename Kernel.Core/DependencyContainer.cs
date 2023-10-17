@@ -22,13 +22,15 @@ namespace Kernel.Core
 
             services.AddDbContext<DatabaseContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("CommandsConnectionString"));
+                options.UseSqlServer(configuration.GetConnectionString("CommandConnectionString"));
             });
 
             services.AddDbContext<QueryDatabaseContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("QueriesConnectionString"));
             });
+
+            services.AddScoped<DapperDatabaseContext>();
 
             #endregion
 
@@ -79,7 +81,7 @@ namespace Kernel.Core
                 string databaseConnectionString =
                     configuration
                     .GetSection(key: "ConnectionStrings")
-                    .GetSection(key: "CommandsConnectionString")
+                    .GetSection(key: "CommandConnectionString")
                     .Value;
 
                 string databaseProviderString =
@@ -107,7 +109,7 @@ namespace Kernel.Core
                 string databaseConnectionString =
                     configuration
                     .GetSection(key: "ConnectionStrings")
-                    .GetSection(key: "QueriesConnectionString")
+                    .GetSection(key: "QueryConnectionString")
                     .Value;
 
                 string databaseProviderString =
